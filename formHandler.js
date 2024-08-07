@@ -8,6 +8,7 @@ const alertLnMsg = document.querySelector("#alert-ln");
 const alertAgeMsg = document.querySelector("#alert-age");
 const fullNameValue = document.querySelector("#fullname-value");
 const ageValue = document.querySelector("#age-value");
+const fetchSection = document.querySelector(".fetch-section");
 
 // firstNameInput.addEventListener("input", () => {
 //   firstNameValue.innerHTML = firstNameInput.value;
@@ -49,9 +50,11 @@ function fetchIdentity() {
     alertLnMsg.innerHTML === "Success!" &&
     alertAgeMsg.innerHTML === "Success!"
   ) {
+    fetchSection.classList.remove("d-none");
     fullNameValue.innerHTML = firstNameInput.value + " " + lastNameInput.value;
     ageValue.innerHTML = ageInput.value;
   } else {
+    fetchSection.classList.add("d-none");
     fullNameValue.innerHTML = "undefined";
     ageValue.innerHTML = "undefined";
   }
