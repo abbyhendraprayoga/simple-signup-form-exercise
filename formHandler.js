@@ -9,6 +9,8 @@ const alertAgeMsg = document.querySelector("#alert-age");
 const fullNameValue = document.querySelector("#fullname-value");
 const ageValue = document.querySelector("#age-value");
 const fetchSection = document.querySelector(".fetch-section");
+const btnNewData = document.querySelector("#btn-reset");
+const helloMsg = document.querySelector("#hello-msg");
 
 // firstNameInput.addEventListener("input", () => {
 //   firstNameValue.innerHTML = firstNameInput.value;
@@ -50,8 +52,10 @@ function fetchIdentity() {
     alertLnMsg.innerHTML === "Success!" &&
     alertAgeMsg.innerHTML === "Success!"
   ) {
+    signUpForm.classList.add("d-none");
     fetchSection.classList.remove("d-none");
     fullNameValue.innerHTML = firstNameInput.value + " " + lastNameInput.value;
+    helloMsg.innerHTML = `Hi, ${firstNameInput.value}, data anda telah kami terima`;
     ageValue.innerHTML = ageInput.value;
   } else {
     fetchSection.classList.add("d-none");
@@ -60,10 +64,19 @@ function fetchIdentity() {
   }
 }
 
+function resetForm() {
+  btnNewData.addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("Thank you for signing up!");
+    location.reload();
+  });
+}
+
 signUpForm.onsubmit = (event) => {
   event.preventDefault();
   formValidation();
   fetchIdentity();
+  resetForm();
 };
 
 // signUpForm.onsubmit = (event) => {

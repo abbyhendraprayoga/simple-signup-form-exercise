@@ -16,43 +16,38 @@
     <div class="container">
       <form action="" id="sign-up-form" class="form-section">
         <h1>Sign Up</h1>
-        <div class="form-floating mb-3">
+        <div class="mb-3 w-100">
+          <label for="first-name" class="form-label text-white"
+            >First Name</label
+          >
           <input
             type="text"
             class="form-control"
             id="first-name"
             placeholder="John Doe"
           />
-          <label for="first-name">First Name</label>
           <span class="" id="alert-fn"></span>
         </div>
-        <div class="form-floating mb-3">
+        <div class="mb-4 w-100">
+          <label for="last-name" class="form-label text-white">Last Name</label>
           <input
             type="text"
             name="last-name"
             class="form-control"
             placeholder="Last Name"
           />
-          <label for="last-name" class="form-label">Last Name</label>
           <span class="" id="alert-ln"></span>
         </div>
-        <div class="form-floating age" style="width: 100%">
+        <div class="mb-1 w-100% d-flex gap-3">
+          <label for="umur" class="form-label text-white mt-1">Umur</label>
           <input
             type="number"
             name="age"
             class="form-control"
             placeholder="Umur"
-            style="height: 2rem"
             min="1"
           />
-          <label for="umur" class="form-label">Umur</label>
-          <button
-            class="btn btn-primary"
-            style="width: 50%; font-weight: 700; letter-spacing: 1px"
-            type="submit"
-          >
-            Submit
-          </button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         <span class="" id="alert-age"></span>
       </form>
@@ -60,6 +55,10 @@
         <div class="card">
           <div class="card-header"><h1>Your Identity</h1></div>
           <div class="card-body">
+            <div class="fetch-data-fn" style="font-size: 15px">
+              <span id="hello-msg"></span>
+            </div>
+            <hr />
             <div class="fetch-data-fn">
               <span>Fullname</span>
               <span class="fw-bold" id="fullname-value"></span>
@@ -70,6 +69,9 @@
               <span class="fw-bold" id="age-value"></span>
             </div>
             <hr />
+            <button class="btn btn-primary d-flex" id="btn-reset" type="button">
+              Input new data
+            </button>
           </div>
         </div>
       </div>

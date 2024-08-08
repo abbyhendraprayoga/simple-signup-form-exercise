@@ -78,7 +78,7 @@ h1 {
   font-size: 1rem;
 }
 .container .fetch-section .card-body {
-  height: 10rem;
+  height: 100%;
 }
 .container .fetch-section .card-body .fetch-data-fn {
   color: white;
