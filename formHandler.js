@@ -13,11 +13,9 @@ const btnNewData = document.querySelector("#btn-reset");
 const helloMsg = document.querySelector("#hello-msg");
 const symbols = /[!@#$%^&*()_+{}\[\]:;"'<>,.?/~`1234567890]/;
 
-// firstNameInput.addEventListener("input", () => {
-//   firstNameValue.innerHTML = firstNameInput.value;
-// });
-
 function formValidation() {
+  // First Name Validation Start
+
   if (firstNameInput.value.trim() === "") {
     alertFnMsg.classList.remove("text-success");
     alertFnMsg.classList.add("text-danger");
@@ -35,6 +33,10 @@ function formValidation() {
     alertFnMsg.classList.add("text-success");
     alertFnMsg.innerHTML = "Success!";
   }
+
+  // First Name Validation End
+
+  // Last Name Validation Start
 
   if (lastNameInput.value.trim() === "") {
     alertLnMsg.classList.remove("text-success");
@@ -54,6 +56,10 @@ function formValidation() {
     alertLnMsg.innerHTML = "Success!";
   }
 
+  // Last Name Validation End
+
+  // Age Validation Start
+
   if (ageInput.value < 18) {
     alertAgeMsg.classList.remove("text-success");
     alertAgeMsg.classList.add("text-danger");
@@ -64,6 +70,8 @@ function formValidation() {
     alertAgeMsg.innerHTML = "Success!";
   }
 }
+
+// Age Validation End
 
 function fetchIdentity() {
   if (
@@ -97,12 +105,3 @@ signUpForm.onsubmit = (event) => {
   fetchIdentity();
   resetForm();
 };
-
-// signUpForm.onsubmit = (event) => {
-//   event.preventDefault();
-//   if (
-//     firstNameInput.value === ""
-//       ? (errorMsg.innerHTML = "sila isi nama anda")
-//       : (successMsg.innerHTML = "terima kasih kerana mendaftar")
-//   );
-// };
