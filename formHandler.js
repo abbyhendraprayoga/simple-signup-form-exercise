@@ -78,12 +78,3 @@ signUpForm.onsubmit = (event) => {
   fetchIdentity();
   resetForm();
 };
-
-// signUpForm.onsubmit = (event) => {
-//   event.preventDefault();
-//   if (
-//     firstNameInput.value === ""
-//       ? (errorMsg.innerHTML = "sila isi nama anda")
-//       : (successMsg.innerHTML = "terima kasih kerana mendaftar")
-//   );
-// };
