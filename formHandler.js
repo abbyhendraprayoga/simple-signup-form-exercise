@@ -11,6 +11,7 @@ const ageValue = document.querySelector("#age-value");
 const fetchSection = document.querySelector(".fetch-section");
 const btnNewData = document.querySelector("#btn-reset");
 const helloMsg = document.querySelector("#hello-msg");
+const symbols = /[!@#$%^&*()_+{}\[\]:;"'<>,.?/~`1234567890]/;
 
 // firstNameInput.addEventListener("input", () => {
 //   firstNameValue.innerHTML = firstNameInput.value;
@@ -21,24 +22,42 @@ function formValidation() {
     alertFnMsg.classList.remove("text-success");
     alertFnMsg.classList.add("text-danger");
     alertFnMsg.innerHTML = "First name cannot be empty";
+  } else if (symbols.test(firstNameInput.value)) {
+    alertFnMsg.classList.remove("text-success");
+    alertFnMsg.classList.add("text-danger");
+    alertFnMsg.innerHTML = "First name cannot contain symbols or numbers!";
+  } else if (firstNameInput.value.length < 3) {
+    alertFnMsg.classList.remove("text-success");
+    alertFnMsg.classList.add("text-danger");
+    alertFnMsg.innerHTML = "First name must be at least 3 characters";
   } else {
     alertFnMsg.classList.remove("text-danger");
     alertFnMsg.classList.add("text-success");
     alertFnMsg.innerHTML = "Success!";
   }
+
   if (lastNameInput.value.trim() === "") {
     alertLnMsg.classList.remove("text-success");
     alertLnMsg.classList.add("text-danger");
     alertLnMsg.innerHTML = "Last name cannot be empty";
+  } else if (symbols.test(lastNameInput.value)) {
+    alertLnMsg.classList.remove("text-success");
+    alertLnMsg.classList.add("text-danger");
+    alertLnMsg.innerHTML = "Last name cannot contain symbols";
+  } else if (lastNameInput.value.length < 3) {
+    alertLnMsg.classList.remove("text-success");
+    alertLnMsg.classList.add("text-danger");
+    alertLnMsg.innerHTML = "Last name must be at least 3 characters";
   } else {
     alertLnMsg.classList.remove("text-danger");
     alertLnMsg.classList.add("text-success");
     alertLnMsg.innerHTML = "Success!";
   }
-  if (ageInput.value.trim() < 18) {
+
+  if (ageInput.value < 18) {
     alertAgeMsg.classList.remove("text-success");
     alertAgeMsg.classList.add("text-danger");
-    alertAgeMsg.innerHTML = "At least 18 years old";
+    alertAgeMsg.innerHTML = "You must be at least 18 years old!";
   } else {
     alertAgeMsg.classList.remove("text-danger");
     alertAgeMsg.classList.add("text-success");
