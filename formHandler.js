@@ -17,7 +17,7 @@ const helloMsg = document.querySelector("#hello-msg");
 // });
 
 function formValidation() {
-  if (firstNameInput.value === "") {
+  if (firstNameInput.value.trim() === "") {
     alertFnMsg.classList.remove("text-success");
     alertFnMsg.classList.add("text-danger");
     alertFnMsg.innerHTML = "First name cannot be empty";
@@ -26,7 +26,7 @@ function formValidation() {
     alertFnMsg.classList.add("text-success");
     alertFnMsg.innerHTML = "Success!";
   }
-  if (lastNameInput.value === "") {
+  if (lastNameInput.value.trim() === "") {
     alertLnMsg.classList.remove("text-success");
     alertLnMsg.classList.add("text-danger");
     alertLnMsg.innerHTML = "Last name cannot be empty";
@@ -35,7 +35,7 @@ function formValidation() {
     alertLnMsg.classList.add("text-success");
     alertLnMsg.innerHTML = "Success!";
   }
-  if (ageInput.value < 18) {
+  if (ageInput.value.trim() < 18) {
     alertAgeMsg.classList.remove("text-success");
     alertAgeMsg.classList.add("text-danger");
     alertAgeMsg.innerHTML = "At least 18 years old";
@@ -55,7 +55,7 @@ function fetchIdentity() {
     signUpForm.classList.add("d-none");
     fetchSection.classList.remove("d-none");
     fullNameValue.innerHTML = firstNameInput.value + " " + lastNameInput.value;
-    helloMsg.innerHTML = `Hi, ${firstNameInput.value}, data anda telah kami terima`;
+    helloMsg.innerHTML = `Hi <span class="fw-bold">${firstNameInput.value}</span>, data anda telah kami terima`;
     ageValue.innerHTML = ageInput.value;
   } else {
     fetchSection.classList.add("d-none");
