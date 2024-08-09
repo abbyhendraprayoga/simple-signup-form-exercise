@@ -9,6 +9,12 @@
 body {
   max-width: 100vw;
   min-height: 100vh;
+  background-image: url("https://i.pinimg.com/736x/b9/55/6b/b9556b7e61c4e5b9da0e94001be902a6.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-backdrop-filter: brightness(50%);
+          backdrop-filter: brightness(50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +30,8 @@ span {
 }
 
 h1 {
-  color: white;
+  color: #00bef8;
+  text-shadow: 1px 1px 1px #000000;
   font-weight: 700;
   margin: 1rem 0;
 }
@@ -39,7 +46,9 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #4e4e4e;
+  border: 1px solid #4e4e4e;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -60,6 +69,8 @@ h1 {
 }
 .container .fetch-section {
   display: flex;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -67,7 +78,7 @@ h1 {
   transition: opacity 0.15s ease;
 }
 .container .fetch-section .card {
-  background-color: #4e4e4e;
+  background-color: rgba(0, 190, 248, 0);
   width: 100%;
   text-align: center;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.46);
@@ -75,7 +86,7 @@ h1 {
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.46);
 }
 .container .fetch-section .card-header {
-  background-color: #474747;
+  background-color: rgba(0, 175, 228, 0);
 }
 .container .fetch-section .card-header h1 {
   font-size: 1rem;
